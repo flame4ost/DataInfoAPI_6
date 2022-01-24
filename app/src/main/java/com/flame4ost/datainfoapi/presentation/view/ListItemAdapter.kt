@@ -23,13 +23,13 @@ class ListItemAdapter : ListAdapter<Item, ListItemAdapter.ItemViewHolder>(DiffCa
         holder.bind(getItem(position))
     }
 
-    class ItemViewHolder(private val binding: RecyclerViewItemBinding) :
+        class ItemViewHolder(private val binding: RecyclerViewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Item) {
             with(binding) {
                 Glide.with(imgItem.context)
-                    .load(item.url)
+                    .load("${item.url}.png")
                     .error(R.drawable.ic_not_image)
                     .circleCrop()
                     .into(imgItem)
